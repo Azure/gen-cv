@@ -160,4 +160,3 @@ cython_debug/
 #.idea/
 
 # gen-cv
-**/reults/
