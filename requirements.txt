@@ -2,3 +2,4 @@ python-dotenv
 openai
 ipykernel
 matplotlib
+azure-ai-vision
