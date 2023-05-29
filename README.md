@@ -1,14 +1,14 @@
-# Project
+# Generative Computer Vision Solution Accelerator
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+<img src="./media/gen-cv.png" alt="drawing" style="width:1200px;"/>
 
-As the maintainer of this project, please make a few updates:
+This repository provides several examples how to generate, manipulate and reason over synthetic images using Azure Machine Learning, Computer Vision, OpenAI alongside popular open source frameworks like Stable Diffusion:
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+- [Explore the OpenAI DALL E-2 API](dalle2-api/DALLE2-api-intro.ipynb)
+- [Create Images with the Azure OpenAI DALL E-2 API](dalle2-api/Florenace-AOAI-DALLE2.ipynb)
+- [Remove background from Images using the Florence foundation model](dalle2-api/Remove-background.ipynb)
+- [Create and Find Images with Stable Diffusion and Florence Vector Search](image-embeddings/generate-and-search-images.ipynb)
+
 
 ## Contributing
 
