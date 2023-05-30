@@ -2,7 +2,7 @@
 
 <img src="./media/gen-cv.png" alt="drawing" style="width:1200px;"/>
 
-This repository provides several examples how to generate, manipulate and reason over synthetic images using Azure Machine Learning, Computer Vision, OpenAI alongside popular open source frameworks like Stable Diffusion:
+This repository serves as a rich resource offering numerous examples of synthetic image generation, manipulation, and reasoning. Utilizing Azure Machine Learning, Computer Vision, OpenAI, and widely acclaimed open-source frameworks like Stable Diffusion, it equips users with practical insights into the application of these powerful tools in the realm of image processing.
 
 - [Explore the OpenAI DALL E-2 API](dalle2-api/DALLE2-api-intro.ipynb)
 - [Create Images with the Azure OpenAI DALL E-2 API](dalle2-api/Florenace-AOAI-DALLE2.ipynb)
