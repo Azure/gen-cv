@@ -4,11 +4,27 @@
 
 This repository serves as a rich resource offering numerous examples of synthetic image generation, manipulation, and reasoning. Utilizing Azure Machine Learning, Computer Vision, OpenAI, and widely acclaimed open-source frameworks like Stable Diffusion, it equips users with practical insights into the application of these powerful tools in the realm of image processing.
 
-- [Explore the OpenAI DALL E-2 API](dalle2-api/DALLE2-api-intro.ipynb)
-- [Create Images with the Azure OpenAI DALL E-2 API](dalle2-api/Florenace-AOAI-DALLE2.ipynb)
-- [Remove background from Images using the Florence foundation model](dalle2-api/Remove-background.ipynb)
-- [Create and Find Images with Stable Diffusion and Florence Vector Search](image-embeddings/generate-and-search-images.ipynb)
+### Use cases
 
+- [Explore the OpenAI DALL E-2 API](dalle2-api/DALLE2-api-intro.ipynb)
+- [Create images with the Azure OpenAI DALL E-2 API](dalle2-api/Florenace-AOAI-DALLE2.ipynb)
+- [Remove background from images using the Florence foundation model](dalle2-api/Remove-background.ipynb)
+- [Create and find images with Stable Diffusion and Florence Vector Search](image-embeddings/generate-and-search-images.ipynb)
+
+### Getting Started
+The code within this repository has been tested on both __Github Codespaces__ compute and an __Azure Machine Learning Compute Instance__. Although the use of a GPU is not a requirement, it is highly recommended if you aim to generate a large number of sample images using Stable Diffusion.
+
+Follow these steps to get started:
+
+1. Clone this repository on your preferred compute using the following command:  
+`git clone https://github.com/Azure/gen-cv.git`
+
+2. Create your Python environment and install the necessary dependencies. For our development, we utilized Conda. You can do the same with these commands:
+
+- `conda create -n gen-cv python=3.10`  
+- `pip install -r requirements.txt`  
+
+3. From the list provided above, select a sample notebook. After making your selection, configure the Jupyter notebook to use the kernel associated with the environment you set up in Step 2.
 
 ## Contributing
 
