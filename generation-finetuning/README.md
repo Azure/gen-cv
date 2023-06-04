@@ -7,7 +7,7 @@ It can also be used for teaching artistic styles (e.g., company branding photogr
 
 Azure Machine Learning facilitates advanced Generative AI use cases with its robust resources and efficient experiment management capabilities.
 
-<img src="../media/azureml.png" alt="Azure Machine Learning Diagram" style="width:800px;"/>
+<img src="../media/azureml.png" alt="Azure Machine Learning Diagram" style="width:1000px;"/>
 
 - Powerful GPU clusters enable multiple resource-intensive fine-tuning runs concurrently.
 - Azure ML provides a framework to manage all associated artifacts, including image datasets, environments, and the resulting models, in a systematic and repeatable manner.
@@ -45,13 +45,13 @@ There are several options to run the solution:
 
 For creating a Compute Instance, use the [Azure ML Studio](https://ml.azure.com/) and navigate to the Compute tab of the Workspace you have created in the previous step. Click the __+ New__ button to select your desired configuration:
 
-<img src="../media/ci.png" alt="drawing" style="width:800px;"/>
+<img src="../media/ci.png" alt="drawing" style="width:1000px;"/>
 
 For managing the training jobs, a `Standard_DS12_v2` CPU Instance is sufficient. You can also create a GPU Instance (for example `Standard_NC6s_v3`) if you wish to generate a high number of images with your fine-tuned model later.
 
 ### 4. Run orchestration notebook
 
-Navigate to the [Dreambooth finetuning notebook](generation-finetuning/finetuning-dreambooth.ipynb) and follow the included instructions.
+Navigate to the [Dreambooth finetuning notebook](./finetuning-dreambooth.ipynb) and follow the included instructions.
 
 ### 5. Clean up (__Warning__: This command will delete the resource group and all its resources):  
 ```bash
