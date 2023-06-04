@@ -9,3 +9,7 @@ transformers
 scipy
 ftfy
 accelerate
+azure-ai-ml
+azure-identity
+mlflow
+azureml-mlflow

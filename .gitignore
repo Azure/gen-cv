@@ -162,3 +162,5 @@ cython_debug/
 # gen-cv
 results/
 genimages/
+generation-finetuning/
+train-artifacts/
