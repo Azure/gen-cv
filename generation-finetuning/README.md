@@ -51,7 +51,7 @@ For managing the training jobs, a `Standard_DS12_v2` CPU Instance is sufficient.
 
 ### 4. Run orchestration notebook
 
-Navigate to the [TODO](xxx) notebook and follow the included instructions.
+Navigate to the [Dreambooth finetuning notebook](generation-finetuning/finetuning-dreambooth.ipynb) and follow the included instructions.
 
 ### 5. Clean up (__Warning__: This command will delete the resource group and all its resources):  
 ```bash

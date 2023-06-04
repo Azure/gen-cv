@@ -10,7 +10,7 @@ This repository serves as a rich resource offering numerous examples of syntheti
 - [Create images with the Azure OpenAI DALL E-2 API](dalle2-api/Florenace-AOAI-DALLE2.ipynb)
 - [Remove background from images using the Florence foundation model](dalle2-api/Remove-background.ipynb)
 - [Create and find images with Stable Diffusion and Florence Vector Search](image-embeddings/generate-and-search-images.ipynb)
-- [Add your own Objects and Styles to Image Generation Models](generation-finetuning/finetuning-dreambooth.ipynb)
+- [Add your own Objects and Styles to Image Generation Models](generation-finetuning/README.md)
 
 ### Getting Started
 The code within this repository has been tested on both __Github Codespaces__ compute and an __Azure Machine Learning Compute Instance__. Although the use of a GPU is not a requirement, it is highly recommended if you aim to generate a large number of sample images using Stable Diffusion.
