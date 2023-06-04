@@ -1,0 +1,25 @@
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - numpy=1.21.2
+  - pip=21.2.4
+  - 'pandas>=1.1,<1.2'
+  - pip:
+      - mlflow== 1.26.1
+      - azureml-mlflow==1.42.0
+      - 'psutil>=5.8,<5.9'
+      - 'tqdm>=4.59,<4.60'
+      - ipykernel~=6.0
+      - matplotlib
+      - 'git+https://github.com/huggingface/diffusers.git'
+      - accelerate>=0.16.0
+      - transformers>=4.25.1
+      - ftfy
+      - torchvision
+      - tensorboard
+      - Jinja2
+      - xformers==0.0.19
+      - bitsandbytes
+      - datasets
+name: model-env
