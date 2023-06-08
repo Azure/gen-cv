@@ -17,13 +17,19 @@ The code within this repository has been tested on both __Github Codespaces__ co
 
 Follow these steps to get started:
 
-1. Clone this repository on your preferred compute using the following command:  
-`git clone https://github.com/Azure/gen-cv.git`
+1.  Clone this repository on your preferred compute using the following command:  
+```bash
+git clone https://github.com/Azure/gen-cv.git
+```
 
 2. Create your Python environment and install the necessary dependencies. For our development, we utilized Conda. You can do the same with these commands:
 
-- `conda create -n gen-cv python=3.10`  
-- `pip install -r requirements.txt`  
+```bash
+conda create -n gen-cv python=3.10
+```
+```bash
+pip install -r requirements.txt
+```
 
 3. From the list provided above, select a sample notebook. After making your selection, configure the Jupyter notebook to use the kernel associated with the environment you set up in Step 2.
 4. Rename the `.env.template` file to `.env` and add the required parameters and keys for your services to the file.
