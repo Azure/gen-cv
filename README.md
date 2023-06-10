@@ -1,4 +1,4 @@
-# Generative Computer Vision Solution Accelerator
+# Vision AI Solution Accelerator
 
 <img src="./media/gen-cv.png" alt="drawing" style="width:1200px;"/>
 
@@ -26,8 +26,7 @@ git clone https://github.com/Azure/gen-cv.git
 
 ```bash
 conda create -n gen-cv python=3.10
-```
-```bash
+conda activate gen-cv
 pip install -r requirements.txt
 ```
 
