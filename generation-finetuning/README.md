@@ -57,3 +57,7 @@ Navigate to the [Dreambooth finetuning notebook](./finetuning-dreambooth.ipynb) 
 ```bash
 az group delete -n gencv
 ```
+## References
+
+[1] Patrick von Platen, Suraj Patil, Anton Lozhkov, Pedro Cuenca, Nathan Lambert, Kashif Rasul, Mishig Davaadorj, Thomas Wolf. (2022). Diffusers: State-of-the-art diffusion models. GitHub. Available at: [https://github.com/huggingface/diffusers](https://github.com/huggingface/diffusers)  
+We have reused the dreambooth `dreambooth.py` training script with minor adjustments.

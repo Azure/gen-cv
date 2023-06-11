@@ -31,22 +31,13 @@ suffix = ", (high detailed skin:1.2), 8k uhd, dslr, advertising photography, hig
 
 negative_prompt = "(deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime:1.4), text, close up, cropped, out of frame, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck"
 
-# prompts = [
-# "product studio photography of zwx hairwax tin in a human hand",
-# "product studio photography tin of zwx hairwax on cosmetics shelf",
-# "product studio photography closeup tin of zwx hairwax with lake in background",
-# "product studio photography tin of zwx hairwax in sand with desert sunset in background",
-# "A magical zwx hairwax tin, futuristic, stunning product studio photography, low-key lighting, bokeh, smoke effects",
-# "product studio photography tin of zwx hairwax on icy lake with reflections. bokeh, blue sky.",
-# ]
-
 prompts = [
-"RAW photo of zwx wood figure walking through the desert",
-"RAW photo of zwx wood figure swimming in a lake",
-"RAW photo of zwx wood figure walking through the forest.",
-"RAW photo of zwx wood figure on icy lake with reflections. bokeh, blue sky.",
-"A magical zwx wood figure, futuristic, stunning product studio photography, low-key lighting, bokeh, smoke effects",
-"RAW photo of zwx wood figure in a busy street in New York.",
+"product studio photography of zwx hairwax tin in a human hand",
+"product studio photography tin of zwx hairwax on cosmetics shelf",
+"product studio photography closeup tin of zwx hairwax with lake in background",
+"product studio photography tin of zwx hairwax in sand with desert sunset in background",
+"A magical zwx hairwax tin, futuristic, stunning product studio photography, low-key lighting, bokeh, smoke effects",
+"product studio photography tin of zwx hairwax on icy lake with reflections. bokeh, blue sky.",
 ]
 
 num_samples = 5
