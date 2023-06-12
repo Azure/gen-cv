@@ -164,3 +164,6 @@ results/
 genimages/
 train-artifacts/
 dev/
+new_imgs/
+image-embeddings/emb.pkl
+image-embeddings/my_emb.pkl
