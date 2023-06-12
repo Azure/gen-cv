@@ -162,6 +162,7 @@ cython_debug/
 # gen-cv
 results/
 genimages/
+testimages/
 train-artifacts/
 dev/
 new_imgs/
