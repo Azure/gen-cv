@@ -31,7 +31,11 @@ pip install -r requirements.txt
 ```
 
 3. From the list provided above, select a sample notebook. After making your selection, configure the Jupyter notebook to use the kernel associated with the environment you set up in Step 2.
-4. Rename the `.env.template` file to `.env` and add the required parameters and keys for your services to the file.
+4. Copy the `.env.template` file to `.env` to store your parameters.
+```bash
+cp .env.template .env
+```
+5. Add the required parameters and keys for your services to the `.env` file.
 
 ## Contributing
 
