@@ -11,7 +11,7 @@ This repository serves as a rich resource offering numerous examples of syntheti
 - [Remove background from images using the Florence foundation model](dalle2-api/Remove-background.ipynb)
 - [Add custom objects and styles to image generation models with Dreambooth](generation-finetuning/README.md)
 - [Create and find images with Stable Diffusion and Florence Vector Search](image-embeddings/generate-and-search-images.ipynb)
-- [Manage image embeddings with the Cogntive Search Vector Store](image-embeddings/image-search-embeddings.ipynb)
+- [Manage image embeddings with the Cognitive Search Vector Store](image-embeddings/image-search-embeddings.ipynb)
 
 ### Getting Started
 The code within this repository has been tested on both __Github Codespaces__ compute and an __Azure Machine Learning Compute Instance__. Although the use of a GPU is not a requirement, it is highly recommended if you aim to generate a large number of sample images using Stable Diffusion.
