@@ -15,4 +15,4 @@ mlflow
 azureml-mlflow
 tenacity
 tqdm
-faiss
+faiss-cpu
