@@ -21,14 +21,14 @@ if endpoint.endswith('/'): endpoint = endpoint[:-1] # remove trailing slash if p
 
 
 # Azure OpenAI
-api_key = os.getenv('AOAI_API_KEY') # key of your Azure OpenAI resource
-api_base = os.getenv('AOAI_ENDPOINT') # endpoint of your Azure OpenAI resource
-api_version = '2022-08-03-preview' # recommended to check for updates
+# api_key = os.getenv('AOAI_API_KEY') # key of your Azure OpenAI resource
+# api_base = os.getenv('AOAI_ENDPOINT') # endpoint of your Azure OpenAI resource
+# api_version = '2022-08-03-preview' # recommended to check for updates
 
-openai.api_type = "azure"
-openai.api_version = "2023-05-15" 
-openai.api_base = api_base
-openai.api_key = api_key
+# openai.api_type = "azure"
+# openai.api_version = "2023-05-15" 
+# openai.api_base = api_base
+# openai.api_key = api_key
 
 
 

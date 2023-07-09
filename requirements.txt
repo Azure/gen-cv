@@ -17,3 +17,5 @@ tenacity
 tqdm
 faiss-cpu
 bokeh
+torch
+torchvision

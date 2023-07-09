@@ -10,6 +10,7 @@ This repository serves as a rich resource offering numerous examples of syntheti
 - [Explore the OpenAI DALL E-2 API](dalle2-api/DALLE2-api-intro.ipynb)
 - [Create images with the Azure OpenAI DALL E-2 API](dalle2-api/Florenace-AOAI-DALLE2.ipynb)
 - [Remove background from images using the Florence foundation model](dalle2-api/Remove-background.ipynb)
+- [Precise Inpainting with Segment Anything, DALLE-2 and Stable Diffusion](dalle2-api/DALLE2-Segment-Anything-edits.ipynb)
 - [Add custom objects and styles to image generation models with Dreambooth](generation-finetuning/README.md)
 - [Create and find images with Stable Diffusion and Florence Vector Search](image-embeddings/generate-and-search-images.ipynb)
 - [Manage image embeddings with the Cognitive Search Vector Store](image-embeddings/image-search-embeddings.ipynb)
