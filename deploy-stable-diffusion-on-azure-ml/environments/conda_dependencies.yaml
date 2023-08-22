@@ -24,7 +24,7 @@ dependencies:
       - pybind11
       - mlflow
       - nvitop
-      - transformers
+      - transformers==4.31.0
       - joblib
       - datasets
       - sentencepiece

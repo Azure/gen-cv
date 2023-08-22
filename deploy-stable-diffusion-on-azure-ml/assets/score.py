@@ -6,7 +6,7 @@ import json
 import math
 import cv2
 import numpy as np
-from compel import Compel
+from compel import Compel, ReturnedEmbeddingsType
 from base64 import b64encode
 from PIL import Image, ImageDraw
 from fastdownload import FastDownload
@@ -229,7 +229,9 @@ def load_model():
 
     pipe_inpaint_cnet = get_inpainting_cnet_pipeline(inpaint_model_name)
 
-    compel_proc = Compel(tokenizer=pipe_img_img.tokenizer, text_encoder=pipe_img_img.text_encoder)
+    compel = Compel(tokenizer=pipe_img_img.tokenizer, text_encoder=pipe_img_img.text_encoder)
+    compel_sdxl = Compel(tokenizer=[pipe_base_sdxl.tokenizer, pipe_base_sdxl.tokenizer_2] , text_encoder=[pipe_base_sdxl.text_encoder, pipe_base_sdxl.text_encoder_2], returned_embeddings_type=ReturnedEmbeddingsType.PENULTIMATE_HIDDEN_STATES_NON_NORMALIZED, requires_pooled=[False, True])
+
 
     base_models = {
         'cnet_pipe': cnet_pipe,
@@ -247,6 +249,11 @@ def load_model():
         'cnet_model_shuffle': cnet_model_shuffle,
         'mlsd': mlsd,
         'depth_estimator': depth_estimator
+    }
+
+    compel_proc = {
+        'sd': compel,
+        'sdxl': compel_sdxl
     }
 
     return base_models, cnet_models, compel_proc
@@ -288,7 +295,7 @@ def prepare_response(images):
 
 
 
-def design(prompt, image=None, num_images_per_prompt=4, negative_prompt=None, strength=0.65, guidance_scale=7.5, num_inference_steps=50, seed=None, design_type='TXT_TO_IMG', mask=None, other_args=None, data=None):
+def design(prompt, image=None, num_images_per_prompt=4, negative_prompt=None, strength=0.65, guidance_scale=7.5, num_inference_steps=50, seed=None, design_type='TXT_TO_IMG', mask=None, other_args=None):
     """
     This function takes various parameters like prompt, image, seed, design_type, etc., and generates images based on the specified design type. It returns a list of generated images.
     """
@@ -312,25 +319,32 @@ def design(prompt, image=None, num_images_per_prompt=4, negative_prompt=None, st
 
     print('dic_conditioning_scales', dic_conditioning_scales)
 
-    li_images = []
+    prompt_emd = None
+    negative_prompt_emd = None
+    pooled = None
+    pooled_neg = None
 
+    if 'TXT_TO_IMG_SDXL' in design_type:
+        prompt_emd, pooled = compel_proc['sdxl'](prompt)
+        negative_prompt_emd, pooled_neg = compel_proc['sdxl'](negative_prompt)
+    else:
+        prompt_emd = compel_proc['sd'](prompt)
+        negative_prompt_emd = compel_proc['sd'](negative_prompt)
+
+    li_images = []
     if design_type == 'TXT_TO_IMG':
-        li_images = base_models["pipe_txt_img"](prompt_embeds=prompt, num_images_per_prompt=num_images_per_prompt, negative_prompt_embeds=negative_prompt, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps).images
+        li_images = base_models["pipe_txt_img"](prompt_embeds=prompt_emd, num_images_per_prompt=num_images_per_prompt, negative_prompt_embeds=negative_prompt_emd, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps).images
 
     elif design_type == 'IMG_TO_IMG':
-        li_images = base_models["pipe_img_img"](prompt_embeds=prompt, image=image, num_images_per_prompt=num_images_per_prompt, negative_prompt_embeds=negative_prompt, strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps).images
+        li_images = base_models["pipe_img_img"](prompt_embeds=prompt_emd, image=image, num_images_per_prompt=num_images_per_prompt, negative_prompt_embeds=negative_prompt_emd, strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps).images
         
     elif design_type == 'TXT_TO_IMG_SDXL':
-        prompt = data['prompt']
-        negative_prompt = data['negative_prompt']
-        li_base_images = base_models["pipe_base_sdxl"](prompt=prompt, num_images_per_prompt=num_images_per_prompt, negative_prompt=negative_prompt, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps).images
+        li_base_images = base_models["pipe_base_sdxl"](prompt_embeds=prompt_emd, pooled_prompt_embeds=pooled, num_images_per_prompt=num_images_per_prompt, negative_prompt_embeds=negative_prompt_emd, negative_pooled_prompt_embeds=pooled_neg, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps).images
         for image in li_base_images:
             refined_image = base_models["pipe_sdxl_refiner"](prompt=prompt, negative_prompt=negative_prompt, num_inference_steps=num_inference_steps, guidance_scale=guidance_scale, strength=strength, image=image).images[0]
             li_images.append(refined_image)
 
     elif design_type == 'IMG_TO_IMG_SDXL':
-        prompt = data['prompt']
-        negative_prompt = data['negative_prompt']
         li_images = base_models["pipe_sdxl_refiner"](prompt=prompt, image=image, num_images_per_prompt=num_images_per_prompt, negative_prompt=negative_prompt, strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps).images
     
     elif design_type == 'CNET_CANNY':
@@ -338,7 +352,7 @@ def design(prompt, image=None, num_images_per_prompt=4, negative_prompt=None, st
         canny_image = prepare_canny_image(image)
         
         base_models["cnet_pipe"].controlnet = cnet_models['cnet_model_scribble']
-        li_images = base_models["cnet_pipe"](prompt_embeds=prompt, image=canny_image, controlnet_conditioning_scale=canny_p, num_images_per_prompt=num_images_per_prompt, negative_prompt_embeds=negative_prompt, guidance_scale=guidance_scale, generator=generator, num_inference_steps=num_inference_steps).images
+        li_images = base_models["cnet_pipe"](prompt_embeds=prompt_emd, image=canny_image, controlnet_conditioning_scale=canny_p, num_images_per_prompt=num_images_per_prompt, negative_prompt_embeds=negative_prompt_emd, guidance_scale=guidance_scale, generator=generator, num_inference_steps=num_inference_steps).images
         li_images.append(canny_image)
 
     elif design_type == "CNET_CANNY_DEPTH":
@@ -349,12 +363,12 @@ def design(prompt, image=None, num_images_per_prompt=4, negative_prompt=None, st
         depth_p = dic_conditioning_scales.get('DEPTH', 0.3)
         
         base_models["cnet_pipe"].controlnet = MultiControlNetModel([cnet_models['cnet_model_scribble'], cnet_models['cnet_model_depth']])
-        li_images = base_models["cnet_pipe"](prompt_embeds=prompt, image=[canny_image, depth_image], controlnet_conditioning_scale=[canny_p, depth_p], num_images_per_prompt=num_images_per_prompt, negative_prompt_embeds=negative_prompt, guidance_scale=guidance_scale, generator=generator, num_inference_steps=num_inference_steps).images
+        li_images = base_models["cnet_pipe"](prompt_embeds=prompt_emd, image=[canny_image, depth_image], controlnet_conditioning_scale=[canny_p, depth_p], num_images_per_prompt=num_images_per_prompt, negative_prompt_embeds=negative_prompt_emd, guidance_scale=guidance_scale, generator=generator, num_inference_steps=num_inference_steps).images
         li_images.append(canny_image)
         li_images.append(depth_image)
 
     elif design_type == 'IN_PAINTING':
-        li_images = base_models["pipe_inpaint"](prompt_embeds=prompt, image=image.resize((512, 512)), mask_image=mask.resize((512, 512)), num_images_per_prompt=num_images_per_prompt, negative_prompt_embeds=negative_prompt, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps).images
+        li_images = base_models["pipe_inpaint"](prompt_embeds=prompt_emd, image=image.resize((512, 512)), mask_image=mask.resize((512, 512)), num_images_per_prompt=num_images_per_prompt, negative_prompt_embeds=negative_prompt_emd, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps).images
 
     return li_images
 
@@ -399,14 +413,12 @@ def run(raw_data):
     if 'strength' in data:
         strength = data['strength']
 
-    prompt_embeds = compel_proc(prompt)
-    n_prompt_embeds = compel_proc(negative_prompt)
     with torch.inference_mode():
-        images = design(prompt=prompt_embeds, image=image, 
+        images = design(prompt=prompt, image=image, 
                         num_images_per_prompt=num_images_per_prompt, 
-                        negative_prompt=n_prompt_embeds, strength=strength, 
+                        negative_prompt=negative_prompt, strength=strength, 
                         guidance_scale=guidance_scale, num_inference_steps=num_inference_steps,
-                        seed=seed, design_type=design_type, mask=mask, other_args=other_args, data=data)
+                        seed=seed, design_type=design_type, mask=mask, other_args=other_args)
     
     preped_response = prepare_response(images)
     resp = AMLResponse(message=preped_response, status_code=200, json_str=True)
