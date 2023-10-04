@@ -14,14 +14,25 @@ parser.add_argument("--model_path", type=str, help="path to model")
 args = parser.parse_args()
 
 
-# lora_model_id = <"lora-sdxl-dreambooth-id">
-# card = RepoCard.load(lora_model_id)
-# base_model_id = card.data.to_dict()["base_model"]
 
+
+if os.path.exists(f'{args.model_path}/pytorch_lora_weights.safetensors'):
+    safetensor_weights = True
+    weights_path = f'{args.model_path}/pytorch_lora_weights.safetensors'
+elif os.path.exists(f'{args.model_path}/pytorch_lora_weights.bin'):
+    safetensor_weights = False
+    weights_path_bin = f'{args.model_path}/pytorch_lora_weights.bin'
+
+    
 # Load the base pipeline and load the LoRA parameters into it. 
 pipe = DiffusionPipeline.from_pretrained('stabilityai/stable-diffusion-xl-base-1.0', torch_dtype=torch.float16)
 pipe = pipe.to("cuda")
-pipe.load_lora_weights(torch.load(f'{args.model_path}/pytorch_lora_weights.bin'))
+
+if safetensor_weights:
+    pipe.load_lora_weights(weights_path, use_safetensors=True)
+else:
+    pipe.load_lora_weights(torch.load(weights_path_bin))
+
 
 # Load the refiner.
 refiner = StableDiffusionXLImg2ImgPipeline.from_pretrained(
@@ -35,33 +46,14 @@ suffix = ", (high detailed skin:1.2), 8k uhd, dslr, advertising photography, hig
 
 negative_prompt = '(semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime:1.4), text, close up, cropped, out of frame, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck'
 
-# prompts = [
-# "product studio photography of a sks car speeding over snow in an alpine mountain",
-# "product studio photography of a sks car speeding over a beach in a tropical island",
-# "product studio photography of a sks car in a glamorous showroom with lots of spotlights and lighting",
-# "product studio photography of a sks car in a ultra-modern urban setting, in some futuristic city",
-# "A magical sks car, futuristic, stunning product studio photography, low-key lighting, bokeh, smoke effects",
-# "product studio photography of a sks car on icy lake with reflections. bokeh, blue sky.",
-# ]
-
-# prompts = [
-# "abstract lnl painting of a person on snow in an alpine mountain",
-# "abstract lnl painting of a person on a beach in a tropical island",
-# "abstract lnl painting of a woman in a ultra-modern urban setting, in some futuristic city",
-# "A magical abstract lnl painting, futuristic, stunning product painting style, low-key lighting, bokeh, smoke effects",
-# "abstract lnl painting of a person on icy lake with reflections. bokeh, blue sky.",
-# ]
-
 prompts = [
-"in the style of ingbsx, realistic studio photo of two persons enjoying business lunch",
-"in the style of ingbsx, realistic studio photo of 5 people in a business meeting enjoying their time",
-"in the style of ingbsx, realistic studio photo of a CEO in a suit laughing on the phone",
-"in the style of ingbsx, realistic studio photo of a business lobby with people socializing",
-"in the style of ingbsx, realistic studio photo of a business professional smelling their coffee in a suit in a coffee shop",
+"product studio photography of zwx hairwax tin in a human hand",
+"product studio photography tin of zwx hairwax on cosmetics shelf",
+"product studio photography closeup of zwx hairwax with lake in background",
+"product studio photography tin of zwx hairwax in sand with desert sunset in background",
+"A magical zwx hairwax tin, futuristic, stunning product studio photography, low-key lighting, bokeh, smoke effects",
+"product studio photography tin of zwx hairwax on icy lake with reflections. bokeh, blue sky.",
 ]
-
-
-
 
 
 num_samples = 5
