@@ -172,4 +172,6 @@ __azurite_db_blob_extent__.json
 __azurite_db_blob__.json
 image-embeddings/img_emb.pkl
 sam*.pth
-generation-finetuning/finetuning-dreambooth-sdxl.ipynb.old
+**/*.amlignore*
+**/*.ipynb_aml_checkpoints*
+**/*amltmp

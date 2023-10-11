@@ -9,7 +9,7 @@ This repository serves as a rich resource offering numerous examples of syntheti
 - [Stable Diffusion XL with Azure Machine Learning](sdxl-azureml/sdxl-on-azureml.ipynb)
 - [Azure Computer Vision in a Day Workshop](azure_computer_vision_workshop/README.md)
 - [Explore the OpenAI DALL E-2 API](dalle2-api/DALLE2-api-intro.ipynb)
-- [Create images with the Azure OpenAI DALL E-2 API](dalle2-api/Florenace-AOAI-DALLE2.ipynb)
+- [Create images with the Azure OpenAI DALL E-2 API](dalle2-api/Florence-AOAI-DALLE2.ipynb)
 - [Remove background from images using the Florence foundation model](dalle2-api/Remove-background.ipynb)
 - [Precise Inpainting with Segment Anything, DALLE-2 and Stable Diffusion](dalle2-api/DALLE2-Segment-Anything-edits.ipynb)
 - [Add custom objects and styles to image generation models with Dreambooth](generation-finetuning/README.md)
