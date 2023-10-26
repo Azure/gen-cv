@@ -3,8 +3,6 @@ from diffusers import DiffusionPipeline, StableDiffusionXLImg2ImgPipeline
 import torch
 import os
 import argparse
-import mlflow
-
 
 
 parser = argparse.ArgumentParser()
