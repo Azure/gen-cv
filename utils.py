@@ -17,7 +17,7 @@ load_dotenv('../.env')
 # Azure Computer Vision
 key = os.getenv("azure_cv_key")
 endpoint = os.getenv("azure_cv_endpoint")
-if endpoint.endswith('/'): endpoint = endpoint[:-1] # remove trailing slash if present
+# if endpoint.endswith('/'): endpoint = endpoint[:-1] # remove trailing slash if present
 
 
 # Azure OpenAI
