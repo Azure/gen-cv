@@ -1,0 +1,17 @@
+<!--ID=B7267351-473F-409D-9765-754A8EBCDE05;Version=1|{"VoiceNameToIdMapItems":[{"Id":"087e625d-ea24-4084-bea7-1cd8615d8900","Name":"Microsoft Server Speech Text to Speech Voice (en-US, EmmaNeural)","ShortName":"en-US-EmmaNeural","Locale":"en-US","VoiceType":"StandardVoice"}]}-->
+<!--ID=FCB40C2B-1F9F-4C26-B1A1-CF8E67BE07D1;Version=1|{"Files":{}}-->
+<!--ID=5B95B1CC-2C7B-494F-B746-CF22A0E779B7;Version=1|{"Locales":{"en-US":{"AutoApplyCustomLexiconFiles":[{}]}}}-->
+<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="en-US"><voice name="en-US-EmmaNeural">
+Hello, I am Lisa. Let me show you how to create an engaging avatar video in four steps.<break strength="x-strong" />
+It begins with a talking script for your avatar. You can get started with a text file. However, we recommend to use the Speech Synthesis Markup Language (SSML) for advanced requirements.
+It allows you to fine-tune the voice of your avatar including pronounciation or the expression of special terms. Also, you can add avatar gestures like pointing to an item.
+The Audio Content Creation tool of the Speech Studio provides an intuitive user interface to create an input file for the process.<break strength="x-strong" />
+With your talking script ready, you can use the Azure Text to Speech API to synthesize your avatar video. 
+Besides providing the SSML input you can specify the character and style of the avatar (such as standing or sitting) and the video format. 
+Our Jupyter notebook will guide you through these steps in detail.<break strength="x-strong" />
+In many cases, you probably want to add a content video with text, illustrations, animations etc. to the final avatar video.
+Our toolset guides you on exporting an animated PowerPoint presentation as a high-resolution video for this purpose.<break strength="x-strong" />
+Finally, you combine the avatar video, content, and optional elements like background music to compose a rich video experience.
+This can either be done using the FFmpeg tool or a video editor like ClipChamp for more control. 
+Using a video editor provides an intuitive way to fine-tune the timings of the video and adding effects and animations.<break strength="x-strong" />
+We can't wait to see what you will create!<break strength="x-strong" /></voice></speak>

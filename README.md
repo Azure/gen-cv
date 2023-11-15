@@ -6,6 +6,8 @@ This repository serves as a rich resource offering numerous examples of syntheti
 
 ### Content
 
+- 🆕 [Create engagaing Avatar Videos](avatar/video/README.md)
+- 🆕 [Create interactive Avatar Experiences](avatar/interactive/readme.md)
 - [Stable Diffusion XL with Azure Machine Learning](sdxl-azureml/sdxl-on-azureml.ipynb)
 - [Azure Computer Vision in a Day Workshop](azure_computer_vision_workshop/README.md)
 - [Explore the OpenAI DALL E-2 API](dalle2-api/DALLE2-api-intro.ipynb)
