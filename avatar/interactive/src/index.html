@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Trailblazers Outdoor Gear</title>
+
+  <link href="./css/styles.css" rel="stylesheet" />
+
+  <script src="./js/microsoft.cognitiveservices.speech.sdk.bundle-min.js"></script>
+  <script src="./js/main.js"></script>
+
+  <script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+  <div class="header">
+    <img src="images/Microsoft.png" alt="Logo" width="32" height="32" />
+    <span class="header__title">Trailblazers Outdoor Gear</span>
+
+    <ul class="menu-items">
+      <li>HIKE</li>
+      <li>CAMP</li>
+      <li>CLIMB</li>
+      <li>CYCLE</li>
+      <li>SNOW</li>
+      <li>PADDLE</li>
+      <li>YOGA</li>
+      <li>CART (0)</li>
+    </ul>
+  </div>
+
+  <div class="title">
+    <h1>Shop Easily With Talking Avatar</h1>
+  </div>
+
+  <div class="main">
+    <div class="main-block">
+      <h2>Here are some things Talking Avatar can help you with:</h2>
+
+      <div class="suggested-questions">
+        <button onclick="window.speak(`What is the warrenty for women's hiking boots?`)">
+          What is the warrenty for women's hiking boots?
+        </button>
+
+        <button onclick="window.speak(`Do you have a tent for two people?`)">
+          Do you have a tent for two people?
+        </button>
+
+        <button onclick="window.speak(`How many bonus points do I have?`)">
+          How many bonus points do I have?
+        </button>
+
+        <button onclick="window.speak(`When will my order arrive?`)">
+          When will my order arrive?
+        </button>
+      </div>
+    </div>
+
+    <div class="avatar-block">
+      <div id="remoteVideo">
+      </div>
+      <canvas id="canvas" width="720" height="1080" style="background-color: transparent;" hidden="hidden"></canvas>
+      <canvas id="tmpCanvas" width="720" height="1080" hidden="hidden"></canvas>
+      
+      <fluent-card class="record-card">
+        <div class="outerbutton">
+          <button id="startRecording" onclick="window.startRecording()" class="round-button">
+            <i id="buttonIcon" class="fas fa-microphone"></i>
+          </button>
+        </div>
+
+        <label id="spokenText" for="spokenText">
+          Press the mic to start talking
+        </label>
+      </fluent-card>
+    </div>
+
+    <div class="main-block">
+      <ul id="chathistory" class="chat-history"></ul>
+    </div>
+  </div>
+
+  <div id="loginOverlay">
+    <div id="gradientOverlay">
+      <div class="loginCard">
+        <div class="loginCard__header">Login</div>
+
+        <fluent-text-field appearance="outline" placeholder="user@email.com">Username</fluent-text-field>
+        <fluent-text-field appearance="outline" placeholder="****************">Password</fluent-text-field>
+
+        <button id="playVideo" onclick="window.startSession()">
+          <span id="playVideo__text" class="playVideo__text">Login</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
