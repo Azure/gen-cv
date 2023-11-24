@@ -53,8 +53,9 @@ This solution accelerator can be used to deploy an application that offers an in
   }
 }
 ```
+5. In case you are using an Azure Speech Services instance in a region different from `westeurope`, update line 17 the `main.js` in the `src/js` folder to reflect that.
 
-5. Run the cells in `create-index-and-database.ipynb` notebook to upload the product data to Azure Cognitive Search and the Azure SQL Database.
+6. Run the cells in `create-index-and-database.ipynb` notebook to upload the product data to Azure Cognitive Search and the Azure SQL Database.
 
 6. For running the app locally, make sure to have ODBC Driver 17 for SQL Server installed.
 
