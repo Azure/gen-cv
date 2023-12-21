@@ -1,0 +1,25 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+      "AzureWebJobsStorage": "",
+      "FUNCTIONS_WORKER_RUNTIME": "python",
+      "AZURE_OPENAI_ENDPOINT": "https://oai-speech-we.openai.azure.com/",
+      "AZURE_OPENAI_API_KEY": "0b3851a19a1140b7b055f7f5a4ba7fbb",
+      "AZURE_OPENAI_CHAT_DEPLOYMENT" : "gpt35",
+      "AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT" : "ada",
+      "AZURE_OPENAI_API_VERSION" : "2023-07-01-preview",
+      "AZURE_SEARCH_ENDPOINT": "https://cog-speech-we-001.search.windows.net",
+      "AZURE_SEARCH_API_KEY": "eM8vGAslWaSpOnzmFVnGAxXB1NAnAY3xMo2JWlIPRWAzSeD77Eva",
+      "AZURE_SEARCH_INDEX": "products",
+      "AZURE_SPEECH_REGION": "westeurope",
+      "AZURE_SPEECH_API_KEY": "0f3accb726164929aa96e8709451edc7",
+      "TEXT_ANALYTICS_ENDPOINT": "https://ta-speech-we.cognitiveservices.azure.com/",
+      "TEXT_ANALYTICS_KEY": "50459befc42146439a2dadc44cb8435e",
+      "BLOB_SAS_URL": "https://devspeech.blob.core.windows.net/speech?sp=racl&st=2023-12-21T06:47:41Z&se=2023-12-22T14:47:41Z&spr=https&sv=2022-11-02&sr=c&sig=5Rqx9Z0Mf%2BT7%2BBui9%2FduKOk9%2FkOMiZDJQWYDaYPU4s4%3D",
+      "SQL_DB_SERVER": "sql-speech-we.database.windows.net",
+      "SQL_DB_USER": "zellyiot",
+      "SQL_DB_PASSWORD": "ZcaALsYxVi63r3VsU27F",
+      "SQL_DB_NAME": "speechdb",
+      "ICE_CONNECTION_STRING": "XXX"
+    }
+  }
