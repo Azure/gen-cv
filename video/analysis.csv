@@ -1,0 +1,146 @@
+title,filename,1_main_product,2_product_use_cases,3_technology_details,4_product_demonstration,5_product_demo_style,6_call_to_action
+Build your own copilots with Azure AI Studio,3hZorLy6JiA.mp4,The main product or technology discussed in this video is Azure AI Studio.,"Key use cases of Azure AI Studio and generative AI models include:
+
+1. Building intelligent natural language interfaces for apps.
+2. Code generation and automation with GitHub.
+3. Security investigation and response.
+4. Multimodal applications using language, vision, speech, and search.
+5. Retrieval-augmented generation for precise information retrieval.
+6. Full lifecycle development of AI applications, including testing for quality and safety.
+7. Custom orchestration with Prompt Flow tool.
+8. Integration of multimodal data (images, text, speech, videos) for dynamic applications.
+9. Fine-tuning large language models for specific use cases with in-house data science expertise.","The technology specifics of the product discussed in the video are centered around Azure AI Studio, a platform provided by Microsoft for building and deploying generative AI applications. The platform offers a range of features and tools designed to facilitate the creation of AI-powered applications, including:
+
+1. **Model Catalog**: Access to a variety of cutting-edge models from Azure Open AI service, Meta, NVIDIA, and Microsoft Research, as well as hundreds of open-source models.
+
+2. **Integration with Microsoft Fabric**: This feature allows users to integrate their own data across multiple datasets to ground their models, made easier through direct integration with One Link in Microsoft Fabric, which uses shortcuts to bring in virtualized datasets without the need to move them.
+
+3. **Full Lifecycle Development**: Azure AI Studio provides tools for prompt engineering, prebuilt Azure AI skills for building multimodal applications using language, vision, speech, and search, built-in evaluation for testing AI applications, and a prompt flow tool for custom orchestration.
+
+4. **Responsible AI Content Classifications**: This feature provides overarching controls for safety, allowing users to apply content filters to their deployed applications to manage harmful content.
+
+5. **Deployment and Monitoring**: The platform enables users to deploy their AI applications and monitor them at scale, with support for integrating the applications into new or existing systems.
+
+6. **Multimodal Support**: Azure AI Studio supports multimodality, allowing users to craft applications that incorporate images, text, speech, and videos.
+
+7. **Fine-Tuning Capabilities**: For advanced users, Azure AI Studio offers the ability to fine-tune large language models (LLMs) to customize their behavior, although this requires in-house data science expertise.
+
+8. **Prompt Flow**: A tool that allows users to define a process that starts with the user prompt and includes steps like determining user intent, extracting and transforming queries, retrieving information to augment the prompt, and formatting the response.
+
+9. **Built-In Evaluation Tools**: These tools help users assess prompt flows and test variations across different metrics such as groundedness, relevance, coherence, and fluency.
+
+10. **Hybrid Search with Semantic Ranking**: This feature retrieves information based on keywords and vector search to better understand user intent, combined with Semantic Search Reranker for more accurate responses.
+
+The platform is accessible at ai.azure.com, and users can start building their own copilot applications using the tools and features provided by Azure AI Studio.","Yes, the video demonstrates a product or technology. The demonstration is of Azure AI Studio, a platform for building, deploying, and managing generative AI apps. The demonstration includes a walkthrough of creating a Copilot app, deploying models, experimenting with prompts, and evaluating and deploying the app. The demonstration spans almost the entire video, starting from the introduction of Azure AI Studio to the deployment of an app, which is approximately the full length of the video.",The product demonstration style in the video is Instructive.,"Yes, there is a call-to-action about the product. The transcript mentions, ""You can start using the Azure AI Studio today at ai.azure.com. To learn more, check out our quick start guides at AKA Miss Learn AI Studio."" This is a direct invitation for the audience to engage with the product by visiting the website and learning more through the provided guides."
+Microsoft Build 2023 Inside Azure Innovations - Project Silica,4fZMT3OzPmY.mp4,"The main product or technology discussed in this video is Project Silica, which is a storage technology that stores data in glass.","Key use cases of Project Silica, as discussed in the transcript, include:
+
+1. AI and large model storage: Storing large AI models like large language models and image models that are very data-hungry.
+2. Analytics: Storing data for analytical purposes.
+3. Archival purposes: Long-term storage of data without degradation, as glass can last tens of thousands of years.
+4. Data center integration: Implementing Project Silica in data centers to manage the storage and retrieval of data encoded in glass.","The technology specifics discussed in the provided transcript revolve around a novel data storage solution called Project Silica. This project is focused on addressing the challenge of the rapidly growing digital universe and the slower pace of growth in installed capacity for data storage. The solution involves storing data in glass, which is highlighted as a more durable medium compared to traditional storage media like SSDs or hard disks.
+
+Project Silica leverages the durability of glass, which can withstand extreme conditions such as microwaves, ovens, scratches, and fire, without degradation for tens of thousands of years. The technology has reached significant milestones, including the successful encoding and reading of data from glass, as demonstrated with the encoding of the ""Superman"" movie and the book ""Zero Day.""
+
+The transcript also mentions the development of a custom-built robot designed to operate within a data center environment. This robot is part of a library system for Project Silica, capable of fetching the appropriate sliver of glass with stored data, taking it to a reader for accessing the data, and then returning it to its place in the library. The robot features actuators and gears that allow it to navigate the library shelves and handle the glass storage media.
+
+In summary, Project Silica represents a significant advancement in data storage technology, offering a long-lasting, durable medium in the form of glass, and utilizing custom robotics to manage and access the stored data within a data center context.","Yes, the video demonstrates a product or technology related to data storage. Specifically, it discusses Project Silica, a Microsoft initiative to store data in glass, which is described as more durable and long-lasting compared to traditional storage media. The demonstration includes showing a piece of glass where Microsoft Flight Simulator is stored and a video from the Microsoft research lab in Cambridge, England, showcasing a custom-built robot designed to handle the glass storage media within a data center environment.
+
+The demonstration of the technology begins around the timestamp of 00:01:12, where the speaker first shows the piece of glass used for data storage, and it continues intermittently as he discusses the specifics of the technology, including the robot's operation in the data center. The demonstration concludes around the timestamp of 00:04:08, making the total length of the demonstration approximately 2 minutes and 56 seconds, interspersed with the speaker's explanation.","The product demonstration style in the video is Instructive. The speaker is providing detailed information about the storage technology, explaining the challenges with data storage, and introducing Project Silica. He uses charts to illustrate the growth of data versus installed capacity and demonstrates the durability and longevity of storing data in glass. The speaker also shows a video of a robot designed to handle the glass storage in a data center, indicating a step towards practical application.","Based on the provided transcript, there is no explicit call-to-action regarding the product. The speaker discusses the challenges of data storage, the growth of data production compared to installed capacity, and introduces Project Silica, a Microsoft initiative for storing data in glass. The speaker highlights the durability and longevity of glass as a storage medium, mentions milestones such as encoding data in glass, and showcases a robot designed for handling the glass storage in data centers. However, there is no direct request for the audience to take a specific action like purchasing a product or signing up for a service."
+"Quantum Computing on Azure | How it Works, What's Coming, & What You Can Try Today",5Af047NGSdE.mp4,"The main product or technology discussed in this video is Azure Quantum, which is Microsoft's cloud platform for quantum innovation. The discussion includes Microsoft's topological approach to quantum computing, setting up a quantum compute environment in Azure Quantum, and running code on real quantum machines.","Key use cases of quantum computing technology include:
+
+1. Accelerating solutions and highly accelerating the cloud.
+2. Solving problems that cannot be solved by today's most powerful supercomputers.
+3. Reducing ""lifetime of the universe"" run times to months, weeks, or days.
+4. Computing in a way that is more akin to nature for processes like nitrogen fixation, potentially leading to less energy-intensive catalysts for fertilizer production.
+5. Studying chemical reactions like carbon fixation to identify catalysts for efficient carbon capture, reducing global warming.
+6. Decoding natural processes to address food shortages and reduce environmental impact.","The technology specifics discussed in the transcript revolve around quantum computing and Microsoft's approach to creating a scalable quantum machine through Azure Quantum. The core concepts include the development of topological qubits, which are foundational to building a scalable quantum machine capable of solving complex problems that classical computers cannot.
+
+Microsoft's breakthrough in March demonstrated the underlying physics required for scalable quantum computing, which involves creating a topological phase with Majorana zero modes at the ends of a nanowire. This phase is essential for the non-local properties needed in a scalable topological qubit.
+
+Azure Quantum is highlighted as a cloud platform that offers a diverse set of quantum hardware and learning materials, allowing users to start experimenting with quantum computing. It provides access to simulators, various quantum hardware providers, and tools for quantum programming, including Q# and Jupyter notebooks.
+
+The transcript also touches on the integration of quantum computing with classical computing in Azure, emphasizing the hybrid nature of the technology. Quantum algorithms consist of both classical and quantum parts, and Azure Quantum facilitates the mapping and optimization of these instructions.
+
+Furthermore, the Quantum Intermediate Representation (QIR) is introduced as an open-source interface that allows for compatibility and portability across different quantum programming languages and hardware platforms.
+
+The images provided correspond to different parts of the video, showcasing interfaces of Azure Quantum, quantum algorithms, and the hardware involved in quantum computing, such as dilution refrigerators and cryogenic CMOS for protecting qubits. The images also depict the process of setting up a quantum compute environment and running code on real quantum machines through Azure Quantum.","Yes, the video demonstrates technology, specifically Microsoft's advancements in quantum computing and how to set up a high-performance quantum compute environment in Azure Quantum workspace to run code on real quantum machines. The demonstration of setting up the compute environment and running code on real quantum hardware begins approximately at the timestamp 00:12:01.0200000 and continues until the end of the video. The total duration of the demonstration is therefore around 2 minutes and 3 seconds.",The product demonstration style in the video is Instructive.,"Yes, there is a call-to-action about the product. The transcript mentions that to get started today for free, one can visit Azure Quantum or go to AKA dot Ms/quantum workspace to start running quantum programs in Azure. Additionally, for those who want to learn more about quantum programming, learning materials and open-source samples can be found at AKA dot Ms/ learn Quantum."
+Microsoft Surface Laptop Studio Hands-on Review,eLI42_zov9k.mp4,"The main product discussed in the video is the ""Surface Laptop Studio.""","Key use cases of the Surface Laptop Studio:
+
+1. Versatile laptop with performance tuning for demanding workloads.
+2. Creative work using AI-powered applications like NVIDIA Canvas.
+3. High-speed data transfers and peripheral connectivity with USBC Thunderbolt 4 ports.
+4. Online meetings with optimized camera and audio experience.
+5. Natural inking feel with Surface slim pen 2 and Windows 11.
+6. Serviceability with accessible SSD for authorized technicians.
+7. All-day battery life for extended use without the need for frequent charging.
+8. Enhanced entertainment with Dolby Vision and Atmos for superior visual and audio experience.","The Surface Laptop Studio is engineered with a flexible and ultra-durable hinge, designed using a special form of woven fabric along with advanced cable management to allow the device to bend up to 180° without stressing the cables. Magnets are used to keep the device securely in place when in different modes.
+
+It is the most powerful device in the Surface portfolio, performance-tuned with the latest generation of discrete NVIDIA GPUs and 11th generation Intel Core H series processors. The GPU performance is the highest in the Surface family, with options for NVIDIA GeForce RTX 3050TI or NVIDIA RTX A2000 for business. These GPUs can run up to 50 watts thanks to Dynamic Boost 2.0, which balances power consumption between the CPU and GPU.
+
+The thermal management is optimized with a tuned Dual Fan active system and heat pipes connected across both processors, allowing for shared cooling. The CPU can see up to 64 watts of power, ensuring heat dissipation where needed. Airflow is also improved compared to other Surface devices.
+
+Surface Laptop Studio supports up to two terabytes of storage using M.2 NVMe SSDs and is designed with serviceability in mind, allowing authorized technicians to access the SSD following Microsoft instructions.
+
+The device includes two USB-C Thunderbolt 4 ports for high-speed data transfers of up to 40 gigabits per second and compatibility with a wide range of peripherals. Despite its powerful capabilities and discrete GPU, it offers up to 19 hours of battery life for typical use.
+
+The display is a key feature, supporting Dolby Vision and a PixelSense Flow Touch display that spans 14.4 inches with a 2400 by 1600 resolution. The display has a faster 120Hz refresh rate, which enhances the inking experience, especially when paired with the optional Surface Slim Pen 2.
+
+The device also features a 1080P full HD front camera array with an integrated IR sensor for Windows Hello, dual studio mics, and a quad omnisonic speaker system with Dolby Atmos for rich spatial sound. The sound system dynamically adjusts the sound curve for bass and treble using adaptive equalization as the volume changes.
+
+Overall, the Surface Laptop Studio is designed to be a versatile and powerful device that adapts to the user's needs, with a focus on performance, serviceability, and an enhanced user experience with Windows 11.","Yes, the video demonstrates a product, specifically the all-new Surface Laptop Studio, which is described as the most powerful Surface to date. The demonstration of the product's design and engineering features, including its flexible and ultra-durable hinge, performance capabilities with the latest NVIDIA GPUs and Intel Core processors, thermal management system, and various modes of interaction, spans throughout the video. The demonstration also includes showcasing the device's display capabilities, serviceability, port options, battery life, and sound system.
+
+The demonstration is not confined to a specific segment but is integrated throughout the video's duration, which is not specified in the transcript. However, based on the context, it can be inferred that the demonstration likely covers the majority of the video as various features and capabilities of the Surface Laptop Studio are discussed in detail.",The product demonstration style is Instructive.,"Yes, there is a call-to-action about the product. The transcript concludes with ""So that was a quick tour of the all new Surface Laptop Studio. I use this device as my daily driver every day and it's amazing. It's a device that truly adapts to you and I can't wait for you to try it out for yourself. To learn more and for availability, check out surface.com. Subscribe to Microsoft Mechanics for the latest in tech updates and thanks for watching Microsoft Mechanics www.microsoft.com Mechanics."" This statement encourages viewers to visit the website for more information and to check the availability of the Surface Laptop Studio, which is a direct call-to-action."
+Azure Cognitive Service for Vision with the Florence foundation model | Azure Friday,JHEcv6gRurg.mp4,"The main product or technology discussed in this video is the Florence Foundation Model for computer vision, which is part of Azure Cognitive Services for vision.","Key use cases of the discussed product or technology:
+
+1. Reading text and analyzing images with OCR (Optical Character Recognition).
+2. Detecting faces and objects in images and videos.
+3. Enabling new vision tasks, including searching images and videos with natural language.
+4. Recognizing millions of objects from the real world (open world recognition).
+5. Customizing the model with your own data for specific use cases.
+6. Generating dense captions for images for accessibility or SEO.
+7. Searching within the frames of a video for specific events or objects.
+8. Summarizing video content and locating specific frames (video TLDR).
+9. Enhancing security and surveillance by making video footage searchable for relevant content.
+10. Potentially making videos more accessible for the vision-impaired.","The technology specifics discussed in the transcript revolve around Azure Cognitive Services for vision, particularly focusing on the capabilities of the Florence Foundation Model for state-of-the-art computer vision. This model is a large, multimodal, transformer-based foundation model that integrates both vision and language capabilities. It has been trained on a vast dataset comprising billions of text and image pairs, enabling it to perform a variety of new vision tasks, including searching images and videos with high accuracy.
+
+The model offers ""open world recognition,"" which means it can recognize millions of real-world objects, including knowledge about landscapes, celebrities, and movies. It also allows for customization, where users can fine-tune the pre-trained model with their own data to cater to specific use cases.
+
+The model's capabilities are showcased through several features:
+
+1. Dense Captions: Provides detailed descriptions of images, including alt text and dense captions for different regions within an image, enhancing accessibility and SEO.
+
+2. Natural Language Search for Images: Allows users to search for images using natural language queries, demonstrating the model's understanding of language in the context of visual content.
+
+3. Video Summarization and Frame Locator: Offers a summary of what happens in a video, identifies noteworthy events, and allows users to search for specific frames within a video using natural language queries.
+
+4. Dense Captions for Video Frames: Similar to image dense captions, this feature provides detailed descriptions of individual video frames.
+
+The model is designed to be accessible through a no-code experience in Visual Studio, with some features already supported by SDKs and REST APIs, while others are planned for future API release. The technology is aimed at a wide range of applications, from enhancing accessibility for the vision-impaired to searching through vast amounts of video footage for security and safety purposes.","Yes, the video demonstrates technology, specifically Azure Cognitive Services for vision, which includes capabilities like OCR, image analysis, face detection, and the newly introduced Florence Foundation Model for advanced computer vision tasks. The demonstration of the technology begins around the timestamp 00:03:36 and continues intermittently throughout the video, showcasing various features such as dense captions for images, natural language search for images, image sets from different domains, and video summarization and frame locator. The total duration of the demonstration segments combined is approximately 10 minutes, interspersed with discussions and explanations of the technology.",The product demonstration style in the video is Instructive.,"No, there is no call-to-action about the product in the provided transcript or images. The content is focused on demonstrating and discussing the capabilities of Azure Cognitive Services for vision, particularly the Florence Foundation Model, and its applications in computer vision tasks."
+Advanced Azure OpenAI Solutions With TTS Avatar,lqwH5wAnO5U.mp4,The main product or technology discussed in this video is advanced AI solutions with TTS Avatar and Azure Open AI.,"The key use cases of the discussed product or technology are:
+
+1. Create rich avatar videos from content.
+2. Create an interactive avatar experience for customer assistance.","The technology specifics discussed in the video revolve around advanced AI solutions, particularly focusing on TTS (Text-to-Speech) Avatar and Azure Open AI. The conversation with Andreas Kopp, a technical specialist for AI solutions, delves into creating immersive avatar videos and interactive avatar app experiences using Azure's AI capabilities.
+
+1. **TTS Avatar Video Creation**: The process begins with crafting a talking script using SSML (Speech Synthesis Markup Language) for more advanced control over pronunciation, phonetics, and avatar gestures. The script is then fed into the TTS Avatar API to generate a video with the selected avatar character and specified video format settings. The output is a video file with a transparent or white background showing the talking avatar. To enrich the video, content such as images, additional videos, or background music can be added using tools like FFmpeg for automation or video editors like Clip Champ for more intuitive control.
+
+2. **Interactive Avatar App Experiences**: This involves creating an app where the avatar can interact with users in real-time, answering questions or facilitating transactions. The architecture includes Azure AI services like Speech-to-Text, Azure AI Search for product information retrieval, and Azure SQL for database interactions. Azure Open AI's function calling is used to orchestrate the conversation, understanding user intent, and triggering the appropriate backend functions. The frontend utilizes a JavaScript application with the Speech SDK to connect to the avatar service.
+
+The video also showcases a demo of an interactive avatar named Lisa, which responds to user queries about bonus points, order status, and even processes product orders in real-time, demonstrating the seamless integration of speech recognition, language understanding, and backend function execution.
+
+For those interested in exploring these technologies further, the Vision AI Solution Accelerator repository on GitHub and the accompanying documentation provide resources and examples to get started with creating advanced AI solutions using TTS Avatar and Azure Open AI.","Yes, the video demonstrates advanced AI solutions with TTS Avatar and Azure Open AI. The demonstration of the technology is extensive and occurs throughout the video, as the speaker, Andreas Kopp, explains the process of creating avatar videos and interactive avatar app experiences. The demonstration includes showing slides, code snippets, and a live example of an interactive avatar in action. The length of the demonstration spans almost the entire duration of the video, as it is interwoven with the explanation and discussion of the technology.","The product demonstration style in the video is Instructive. The presenters are explaining and demonstrating how to create avatar videos and interactive avatar app experiences using TTS Avatar and Azure Open AI. They provide detailed instructions, show code examples, and discuss the architecture and functionalities of the solutions.","No, there is no explicit call-to-action about the product mentioned in the provided transcript or shown in the images. The content is focused on explaining and demonstrating the capabilities of TTS Avatar and Azure Open AI, including how to create avatar videos and interactive avatar app experiences. The video serves as an informational and educational presentation rather than a direct promotion or advertisement of a product with a call-to-action."
+Microsoft Flight Simulator 2024 - Announce Trailer - 4K,p3xp-SnZDoY.mp4,"The main product or technology discussed in this video is ""The Next Generation of Microsoft Flight Simulator,"" as indicated in the image at timestamp 00:00:12.0120000.","Key use cases of the discussed product or technology:
+
+- Pursue a career in aviation
+- Search and rescue operations
+- Scientific research
+- Air racing competitions
+- Mountain rescue missions
+- Flight simulation experiences","The images provided are from a video that appears to be promoting a flight simulation game, likely the ""next generation of Microsoft Flight Simulator,"" as indicated in one of the frames. The game is associated with Xbox Game Studios and Asobo Studio, suggesting a collaboration between the two for its development.
+
+The frames showcase various aspects of the game, including realistic in-game footage of diverse landscapes and scenarios such as cityscapes with detailed environmental effects (like smoke from a fire), search and rescue operations in rugged terrains, operations around oil rigs in the ocean, and various aircraft including helicopters and planes.
+
+The technology specifics of this product would include high-definition graphics, as evidenced by the detailed environments and realistic weather effects. The simulation aspect suggests advanced physics engines to accurately simulate flight dynamics and possibly real-world weather conditions. The mention of ""pursue your dream of a career in aviation"" implies that the game may include career-mode elements, where players can experience different roles within the field of aviation.
+
+The game also seems to offer a variety of aviation-related activities, such as mountain rescues, skydiving, scientific research, and air racing, indicating a broad scope of gameplay experiences. The frame showing the cockpit view with instrument panels suggests that the game may offer a detailed and immersive piloting experience, potentially with interactive controls and gauges.
+
+The final image with the Xbox logo reaffirms the game's availability on Xbox platforms, and the mention of ""Play a day one with Game Pass"" indicates that it will be accessible through the Xbox Game Pass subscription service from its launch day.","The video demonstrates technology, specifically the ""Next Generation of Microsoft Flight Simulator,"" as indicated in the third image. The demonstration appears to start at the timestamp of the fifth image (00:00:20.0200000) where it says ""IN-GAME FOOTAGE,"" suggesting that the video is showing features or gameplay of the flight simulator. The demonstration seems to continue until the final image provided, which is at timestamp 00:02:09.0290000. Therefore, the duration of the demonstration is approximately 1 minute and 49 seconds.",The product demonstration style is Instructive.,"Based on the provided images and transcript, there is a call-to-action about the product which is ""Play a day one with Game Pass."""

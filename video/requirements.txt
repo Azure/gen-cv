@@ -1,0 +1,6 @@
+ipykernel
+requests
+python-dotenv
+azure-storage-blob
+opencv-python
+moviepy
