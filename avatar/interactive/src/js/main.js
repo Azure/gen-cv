@@ -20,13 +20,10 @@ const IceServerUrl = "turn:relay.communication.microsoft.com:3478" // Fill your 
 let IceServerUsername
 let IceServerCredential
 
-// This is the only avatar which supports live streaming so far, please don't modify
 const TalkingAvatarCharacter = "lisa"
 const TalkingAvatarStyle = "casual-sitting"
 
 supported_languages = ["en-US", "de-DE", "zh-CN", "ar-AE"] // The language detection engine supports a maximum of 4 languages
-
-const BackgroundColor = '#FFFFFFFF'
 
 let token
 
@@ -34,6 +31,7 @@ const speechSynthesisConfig = SpeechSDK.SpeechConfig.fromEndpoint(new URL("wss:/
 
 // Global objects
 var speechSynthesizer
+var avatarSynthesizer
 var peerConnection
 var previousAnimationFrameTimestamp = 0
 
@@ -101,7 +99,6 @@ function setupWebRTC() {
         console.log("WebRTC status: " + peerConnection.iceConnectionState)
     
         if (peerConnection.iceConnectionState === 'connected') {
-          greeting()
           document.getElementById('loginOverlay').classList.add("hidden");
         }
     
@@ -112,11 +109,31 @@ function setupWebRTC() {
       // Offer to receive 1 audio, and 1 video track
       peerConnection.addTransceiver('video', { direction: 'sendrecv' })
       peerConnection.addTransceiver('audio', { direction: 'sendrecv' })
+
+      // start avatar, establish WebRTC connection
+      avatarSynthesizer.startAvatarAsync(peerConnection).then((r) => {
+        if (r.reason === SpeechSDK.ResultReason.SynthesizingAudioCompleted) {
+            console.log("[" + (new Date()).toISOString() + "] Avatar started. Result ID: " + r.resultId)
+            greeting()
+        } else {
+            console.log("[" + (new Date()).toISOString() + "] Unable to start avatar. Result ID: " + r.resultId)
+            if (r.reason === SpeechSDK.ResultReason.Canceled) {
+                let cancellationDetails = SpeechSDK.CancellationDetails.fromResult(r)
+                if (cancellationDetails.reason === SpeechSDK.CancellationReason.Error) {
+                    console.log(cancellationDetails.errorDetails)
+                };
+
+                console.log("Unable to start avatar: " + cancellationDetails.errorDetails);
+            }
+        }
+    }).catch(
+        (error) => {
+            console.log("[" + (new Date()).toISOString() + "] Avatar failed to start. Error: " + error)
+            document.getElementById('startSession').disabled = false
+            document.getElementById('configuration').hidden = false
+        }
+    )
     
-      // Set local description
-      peerConnection.createOffer().then(sdp => {
-        peerConnection.setLocalDescription(sdp).then(() => { setTimeout(() => { connectToAvatarService() }, 1000) })
-      }).catch(console.log)
     })  
 }
 
@@ -151,69 +168,24 @@ function connectToAvatarService() {
   let videoCropBottomRightX = 1320
   let backgroundColor = '#00FF00FF'
 
-  console.log(peerConnection.localDescription)
-  const clientRequest = {
-    protocol: {
-      name: "WebRTC",
-      webrtcConfig: {
-        clientDescription: btoa(JSON.stringify(peerConnection.localDescription)),
-        iceServers: [{
-          urls: [IceServerUrl],
-          username: IceServerUsername,
-          credential: IceServerCredential
-        }]
-      },
-    },
-    format: {
-      codec: 'H264',
-        resolution: {
-            width: 1920,
-            height: 1080
-        },
-        crop:{
-            topLeft: {
-                x: videoCropTopLeftX,
-                y: 0
-            },
-            bottomRight: {
-                x: videoCropBottomRightX,
-                y: 1080
-            }
-        },
-        bitrate: 2000000
-    },
-    talkingAvatar: {
-      character: TalkingAvatarCharacter,
-      style: TalkingAvatarStyle,
-      background: {
-          color: backgroundColor
+  const videoFormat = new SpeechSDK.AvatarVideoFormat()
+  videoFormat.setCropRange(new SpeechSDK.Coordinate(videoCropTopLeftX, 0), new SpeechSDK.Coordinate(videoCropBottomRightX, 1080));
+
+  const avatarConfig = new SpeechSDK.AvatarConfig(TalkingAvatarCharacter, TalkingAvatarStyle, videoFormat)
+  avatarConfig.backgroundColor = backgroundColor
+
+  avatarSynthesizer = new SpeechSDK.AvatarSynthesizer(speechSynthesisConfig, avatarConfig)
+  avatarSynthesizer.avatarEventReceived = function (s, e) {
+      var offsetMessage = ", offset from session start: " + e.offset / 10000 + "ms."
+      if (e.offset === 0) {
+          offsetMessage = ""
       }
-  }
-  }
-
-  // Callback function to handle the response from TTS Avatar API
-  const complete_cb = function (result) {
-    const sdp = result.properties.getProperty(SpeechSDK.PropertyId.TalkingAvatarService_WebRTC_SDP)
-    if (sdp === undefined) {
-      console.log("Failed to get remote SDP. The avatar instance is temporarily unavailable. Result ID: " + result.resultId)
-      document.getElementById('startSession').disabled = false
-    }
-
-    peerConnection.setRemoteDescription(new RTCSessionDescription(JSON.parse(atob(sdp)))).then(r => { })
+      console.log("Event received: " + e.description + offsetMessage)
   }
 
-  const error_cb = function (result) {
-    let cancellationDetails = SpeechSDK.CancellationDetails.fromResult(result)
-    console.log(cancellationDetails)
-    document.getElementById('startSession').disabled = false
-  }
-
-  // Call TTS Avatar API
-  speechSynthesizer.setupTalkingAvatarAsync(JSON.stringify(clientRequest), complete_cb, error_cb)
 }
 
 window.startSession = () => {
-  // Create the <i> element
   var iconElement = document.createElement("i");
   iconElement.className = "fa fa-spinner fa-spin";
   iconElement.id = "loadingIcon"
@@ -233,18 +205,16 @@ window.startSession = () => {
     })
     .then(() => {
       speechSynthesizer = new SpeechSDK.SpeechSynthesizer(speechSynthesisConfig, null)
+      connectToAvatarService()
       requestAnimationFrame(setupWebRTC)
     })
-
-  
-  // setupWebRTC()
 }
 
 async function greeting() {
   addToConversationHistory("Hello, my name is Lisa. How can I help you?", "light")
 
   let spokenText = "<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-US'><voice xml:lang='en-US' xml:gender='Female' name='en-US-JennyNeural'>Hello, my name is Lisa. How can I help you?</voice></speak>"
-  speechSynthesizer.speakSsmlAsync(spokenText, (result) => {
+  avatarSynthesizer.speakSsmlAsync(spokenText, (result) => {
     if (result.reason === SpeechSDK.ResultReason.SynthesizingAudioCompleted) {
       console.log("Speech synthesized to speaker for text [ " + spokenText + " ]. Result ID: " + result.resultId)
     } else {
@@ -279,7 +249,7 @@ window.speak = (text) => {
           spokenTextssml = `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='https://www.w3.org/2001/mstts' xml:lang='en-US'><voice xml:lang='en-US' xml:gender='Female' name='ar-AE-FatimaNeural'><lang xml:lang="${language}">${generatedResult}</lang></voice></speak>`
         }
         let spokenText = generatedResult
-        speechSynthesizer.speakSsmlAsync(spokenTextssml, (result) => {
+        avatarSynthesizer.speakSsmlAsync(spokenTextssml, (result) => {
           if (result.reason === SpeechSDK.ResultReason.SynthesizingAudioCompleted) {
             console.log("Speech synthesized to speaker for text [ " + spokenText + " ]. Result ID: " + result.resultId)
           } else {
