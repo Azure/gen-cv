@@ -19,7 +19,6 @@ This solution accelerator can be used to deploy an application that offers an in
      - Networking: Allow Azure services and resources to access this server enabled
    - Azure Speech Service
    - Azure AI services multi-service account
-   - [Azure Communication Services](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/create-communication-resource?tabs=windows&pivots=platform-azp#create-azure-communication-services-resource)
    - Azure Blob Storage account
 
 3. Upload the images in the `product-images` directory to a blob container in the Storage Account. Generate a **SAS URL** for the blob storage container. Set the expiry date according to the planned lifecycle of your application.
@@ -52,8 +51,7 @@ This solution accelerator can be used to deploy an application that offers an in
     "SQL_DB_SERVER": "XXX.database.windows.net",
     "SQL_DB_USER": "XXX",
     "SQL_DB_PASSWORD": "XXX",
-    "SQL_DB_NAME": "OutdoorEquipmentShop",
-    "ICE_CONNECTION_STRING": "XXX"
+    "SQL_DB_NAME": "OutdoorEquipmentShop"
   }
 }
 ```

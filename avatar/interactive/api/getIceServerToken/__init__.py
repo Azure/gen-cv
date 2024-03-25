@@ -1,37 +1,28 @@
 import logging
+import requests
 import os
 import json
-from azure.communication.networktraversal import CommunicationRelayClient
-from azure.communication.identity import CommunicationIdentityClient
 
 import azure.functions as func
 
-connection_str = os.getenv("ICE_CONNECTION_STRING")
+# Define subscription key and region
+subscription_key = os.getenv("AZURE_SPEECH_API_KEY")
+region = os.getenv("AZURE_SPEECH_REGION")
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    identity_client = CommunicationIdentityClient.from_connection_string(connection_str)
-    relay_client = CommunicationRelayClient.from_connection_string(connection_str)
+    # Define token endpoint
+    token_endpoint = f"https://{region}.tts.speech.microsoft.com/cognitiveservices/avatar/relay/token/v1"
 
-    _ = identity_client.create_user()
-    relay_client.get_relay_configuration()
+    # Make HTTP request with subscription key as header
+    response = requests.get(token_endpoint, headers={"Ocp-Apim-Subscription-Key": subscription_key})
 
-    relay_configuration = relay_client.get_relay_configuration()
-
-    for iceServer in relay_configuration.ice_servers:
-        assert iceServer.username is not None
-        assert iceServer.credential is not None
-        assert iceServer.urls is not None
-        for url in iceServer.urls:
-            print('Url:' + url)
-
-        credentials = {
-            "username": iceServer.username,
-            "credential": iceServer.credential
-        }
-
-    return func.HttpResponse(
-            json.dumps(credentials),
-            status_code=200
-    )
+    if response.status_code == 200:
+        return func.HttpResponse(
+            body= json.dumps(response.json()),
+            status_code=200,
+            headers={"Content-Type": "application/json"}
+        )
+    else:
+        return func.HttpResponse(response.status_code)

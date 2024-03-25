@@ -5,5 +5,3 @@
 azure-functions
 requests
 pyodbc
-azure-communication-networktraversal
-azure-communication-identity
