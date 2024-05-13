@@ -27,7 +27,7 @@ Follow these steps to get started:
 
 1.  Clone this repository on your preferred compute using the following command:  
 ```bash
-git clone https://github.com/Azure/gen-cv.git
+git clone https://github.com/Grett076/gen-cv.git
 ```
 
 2. Create your Python environment and install the necessary dependencies. For our development, we utilized Conda. You can do the same with these commands:
