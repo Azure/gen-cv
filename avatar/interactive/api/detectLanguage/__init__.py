@@ -44,7 +44,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         "pt": "pt-BR",
         "zh_chs": "zh-CN",
         "zh_cht": "zh-CN",
-        "ar": "ar-AE"
+        "ar": "ar-AE",
+        "nl": "nl-NL",
+        "pl": "pl-PL",
+        "ro": "ro-RO"
     }
 
     if response.status_code == 200:
