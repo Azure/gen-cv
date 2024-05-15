@@ -4,6 +4,7 @@
 
 This repository serves as a rich resource offering numerous examples of synthetic image generation, manipulation, and reasoning. Utilizing Azure Machine Learning, Computer Vision, OpenAI, and widely acclaimed open-source frameworks like Stable Diffusion, it equips users with practical insights into the application of these powerful tools in the realm of image processing.
 
+
 ### Content
 
 - 🆕 [Guided Image Generation](guided-image-generation/README.md)
