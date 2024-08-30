@@ -1,6 +1,0 @@
-ipykernel
-python-dotenv
-openai
-requests
-streamlit
-azure-ai-contentsafety

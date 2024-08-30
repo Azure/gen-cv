@@ -1,1 +1,0 @@
-Dummy entry. Actual SD models will be downloaded from scoring script score.py.

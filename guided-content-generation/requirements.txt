@@ -1,0 +1,8 @@
+python-dotenv
+opencv-python
+openai
+scenedetect
+imagehash
+moviepy
+streamlit
+replicate
