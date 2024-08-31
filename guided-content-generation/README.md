@@ -2,7 +2,7 @@
 
 This app demonstrates how to provide content creation experiences for customers and employees while adhering to responsible AI standards and corporate policies.
 
-<img src="gcg-ui-xbox.png" width="700"/>
+<img src="gcg-ui.png" width="700"/>
 
 ## Image Generation Workflow
 

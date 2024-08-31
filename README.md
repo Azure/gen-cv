@@ -6,8 +6,8 @@ This repository serves as a rich resource offering numerous examples of syntheti
 
 ### Content
 
-- 🆕 [Guided Image Generation](guided-image-generation/README.md)
-- 🆕 [Find and analyze Videos using GPT4-Vision with Video Enhancements](video/README.md)
+- 🆕 [Guided Content Generation](guided-content-generation/README.md)
+- [Find and analyze Videos using GPT4-Vision with Video Enhancements](video/README.md)
 - [Create engagaing Avatar Videos](avatar/video/README.md)
 - [Create interactive Avatar Experiences](avatar/interactive/readme.md)
 - [Stable Diffusion XL with Azure Machine Learning](sdxl-azureml/sdxl-on-azureml.ipynb)
