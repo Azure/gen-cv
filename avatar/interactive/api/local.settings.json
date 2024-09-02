@@ -1,0 +1,24 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+      "AzureWebJobsStorage": "",
+      "FUNCTIONS_WORKER_RUNTIME": "python",
+      "AZURE_OPENAI_ENDPOINT": "https://mfgtechazureopenaiservice.openai.azure.com/",
+      "AZURE_OPENAI_API_KEY": "3fecc6350aa04c6589f1a31c86bc31ac",
+      "AZURE_OPENAI_CHAT_DEPLOYMENT" : "gpt-35-turbo-16k",
+      "AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT" : "text-embedding-ada-002",
+      "AZURE_OPENAI_API_VERSION" : "2023-07-01-preview",
+      "AZURE_SEARCH_ENDPOINT": "https://volvocarspoc-searchservice.search.windows.net",
+      "AZURE_SEARCH_API_KEY": "4F0xJAiUm0JhTzwCwqOnntnswOqwvLnmbJIh95C3LoAzSeAyKEFu",
+      "AZURE_SEARCH_INDEX": "jci-index",
+      "AZURE_SPEECH_REGION": "southcentralus",
+      "AZURE_SPEECH_API_KEY": "0da969b354d44ca3aa62672107749f5f",
+      "TEXT_ANALYTICS_ENDPOINT": "XXX",
+      "TEXT_ANALYTICS_KEY": "XXX",
+      "BLOB_SAS_URL": "https://mfgaivisionstorage.blob.core.windows.net/avatarchatbot?sp=r&st=2024-09-02T09:35:02Z&se=2024-09-02T17:35:02Z&spr=https&sv=2022-11-02&sr=c&sig=S1HGlHC3vcdy1g6NScsTVVKpx9o7JpKnqXwND%2Bg%2BaTQ%3D",
+      "SQL_DB_SERVER": "mfgaiavatardbserver.database.windows.net",
+      "SQL_DB_USER": "avataradmin",
+      "SQL_DB_PASSWORD": "JuneSecond@5939",
+      "SQL_DB_NAME": "mfgaiavatarsqldb"
+    }
+  }
