@@ -11,7 +11,7 @@
       "AZURE_SEARCH_ENDPOINT": "https://volvocarspoc-searchservice.search.windows.net",
       "AZURE_SEARCH_API_KEY": "4F0xJAiUm0JhTzwCwqOnntnswOqwvLnmbJIh95C3LoAzSeAyKEFu",
       "AZURE_SEARCH_INDEX": "jci-index",
-      "AZURE_SPEECH_REGION": "southcentralus",
+      "AZURE_SPEECH_REGION": "South Central US",
       "AZURE_SPEECH_API_KEY": "0da969b354d44ca3aa62672107749f5f",
       "TEXT_ANALYTICS_ENDPOINT": "XXX",
       "TEXT_ANALYTICS_KEY": "XXX",
