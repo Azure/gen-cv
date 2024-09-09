@@ -20,6 +20,7 @@ This solution accelerator can be used to deploy an application that offers an in
    - Azure Speech Service
    - Azure AI services multi-service account
    - Azure Blob Storage account
+   - Bing Search service
 
 3. Upload the images in the `product-images` directory to a blob container in the Storage Account. Generate a **SAS URL** for the blob storage container. Set the expiry date according to the planned lifecycle of your application.
 
@@ -51,7 +52,9 @@ This solution accelerator can be used to deploy an application that offers an in
     "SQL_DB_SERVER": "XXX.database.windows.net",
     "SQL_DB_USER": "XXX",
     "SQL_DB_PASSWORD": "XXX",
-    "SQL_DB_NAME": "OutdoorEquipmentShop"
+    "SQL_DB_NAME": "OutdoorEquipmentShop",
+    "BING_KEY": "XXX",
+    "BING_SEARCH_URL": "https://api.bing.microsoft.com/v7.0/search"
   }
 }
 ```

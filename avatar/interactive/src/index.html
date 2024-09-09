@@ -10,7 +10,7 @@
   <script src="https://aka.ms/csspeech/jsbrowserpackageraw"></script>
   <script src="./js/main.js"></script>
 
-  <script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
+  <script type="module" src="https://unpkg.com/@fluentui/web-components@2.0.0"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
@@ -40,19 +40,19 @@
       <h2>Here are some things Talking Avatar can help you with:</h2>
 
       <div class="suggested-questions">
-        <button onclick="window.speak(`What is the warrenty for women's hiking boots?`)">
+        <button onclick="handleUserQuery(`What is the warrenty for women's hiking boots?`)">
           What is the warrenty for women's hiking boots?
         </button>
 
-        <button onclick="window.speak(`Do you have a tent for two people?`)">
+        <button onclick="handleUserQuery(`Do you have a tent for two people?`)">
           Do you have a tent for two people?
         </button>
 
-        <button onclick="window.speak(`How many bonus points do I have?`)">
+        <button onclick="handleUserQuery(`How many bonus points do I have?`)">
           How many bonus points do I have?
         </button>
 
-        <button onclick="window.speak(`When will my order arrive?`)">
+        <button onclick="handleUserQuery(`When will my order arrive?`)">
           When will my order arrive?
         </button>
       </div>
@@ -89,6 +89,23 @@
 
         <fluent-text-field appearance="outline" placeholder="user@email.com">Username</fluent-text-field>
         <fluent-text-field appearance="outline" placeholder="****************">Password</fluent-text-field>
+
+        <div>
+          Pick an avatar and voice
+          <div style="display: flex;">
+          <fluent-select id="avatar-name" style="min-width: 100px" title="Select a section">
+            <fluent-option value="Lisa">Lisa</fluent-option>
+            <fluent-option value="Meg">Meg</fluent-option>
+            <fluent-option value="max">Max</fluent-option>
+          </fluent-select>
+
+          <fluent-select id="avatar-voice" style="min-width: 100px" title="Select a section">
+            <fluent-option value="en-US-AvaMultilingualNeural">Ava</fluent-option>
+            <fluent-option value="en-US-AmandaMultilingualNeural">Amanda</fluent-option>
+            <fluent-option value="en-US-AndrewMultilingualNeural">Andrew</fluent-option>
+          </fluent-select>
+        </div>
+        </div>
 
         <button id="playVideo" onclick="window.startSession()">
           <span id="playVideo__text" class="playVideo__text">Login</span>
