@@ -7,6 +7,7 @@ import logging
 import pyodbc
 import requests
 import json
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 
 # Azure Function App
@@ -23,6 +24,7 @@ search_index_name = os.getenv("AZURE_SEARCH_INDEX")
 bing_key = os.getenv("BING_KEY")
 search_url = os.getenv("BING_SEARCH_URL")
 blob_sas_url = os.getenv("BLOB_SAS_URL")
+place_orders = False
 
 sql_db_server = os.getenv("SQL_DB_SERVER")
 sql_db_user = os.getenv("SQL_DB_USER")
@@ -414,14 +416,11 @@ async def stream_processor(response, messages):
                   }
 
     async for chunk in response:
-        logging.info('chunk received')
-        print('chunk received')
         if len(chunk.choices) > 0:
             delta = chunk.choices[0].delta
 
             if delta.content is None:
                 if delta.tool_calls:
-                    print('tool_call')
                     tool_calls = delta.tool_calls
                     tool_call = tool_calls[0]
                     if tool_call.id != None:
@@ -445,6 +444,7 @@ async def stream_processor(response, messages):
                                 "bing_web_search": bing_web_search,
                                 "get_bonus_points": get_bonus_points,
                                 "get_order_details": get_order_details,
+                                "order_product": order_product
                             }
                             function_to_call = available_functions[func_call["function"]["name"]] 
 
