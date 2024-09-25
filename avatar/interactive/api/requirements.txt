@@ -4,3 +4,7 @@
 
 azure-functions
 azurefunctions-extensions-http-fastapi
+openai
+pyodbc
+requests
+beautifulsoup4
