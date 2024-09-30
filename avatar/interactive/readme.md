@@ -36,6 +36,7 @@ This solution accelerator can be used to deploy an application that offers an in
   "Values": {
     "AzureWebJobsStorage": "",
     "FUNCTIONS_WORKER_RUNTIME": "python",
+    "PYTHON_ENABLE_INIT_INDEXING": "1",
     "AZURE_OPENAI_ENDPOINT": "https://XXX.openai.azure.com/",
     "AZURE_OPENAI_API_KEY": "XXX",
     "AZURE_OPENAI_CHAT_DEPLOYMENT" : "gpt-35-turbo-16k",
