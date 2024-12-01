@@ -6,6 +6,7 @@ This repository serves as a rich resource offering numerous examples of syntheti
 
 ### Content
 
+- 🆕 [Vision Fine-tuning](vision-fine-tuning/README.md)
 - 🆕 [Guided Content Generation](guided-content-generation/README.md)
 - [Find and analyze Videos using GPT4-Vision with Video Enhancements](video/README.md)
 - [Create engagaing Avatar Videos](avatar/video/README.md)
