@@ -1,0 +1,6 @@
+openai
+python-dotenv
+datasets
+pillow
+ipywidgets
+azure-identity
