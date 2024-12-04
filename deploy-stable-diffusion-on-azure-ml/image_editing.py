@@ -1,3 +1,8 @@
+"""
+For instructions how to use the code, please reference this blog: 
+https://techcommunity.microsoft.com/blog/machinelearningblog/image-editing-using-azure-openai-and-azure-machine-learning/4339077
+"""
+
 import os
 import requests
 import base64
