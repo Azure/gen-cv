@@ -4,3 +4,5 @@ datasets
 pillow
 ipywidgets
 azure-identity
+tenacity
+matplotlib

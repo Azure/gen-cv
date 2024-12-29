@@ -6,7 +6,8 @@ This repository serves as a rich resource offering numerous examples of syntheti
 
 ### Content
 
-- 🆕 [Vision Fine-tuning](vision-fine-tuning/README.md)
+- 🆕[Azure OpenAI Vision Fine-tuning for video analysis](vision-fine-tuning/02-AOAI-video-fine-tuning/README.md)
+- 🆕[Azure OpenAI Vision Fine-tuning starter](vision-fine-tuning/01-AOAI-vision-fine-tuning-starter/README.md)
 - 🆕 [Guided Content Generation](guided-content-generation/README.md)
 - [Find and analyze Videos using GPT4-Vision with Video Enhancements](video/README.md)
 - [Create engagaing Avatar Videos](avatar/video/README.md)
