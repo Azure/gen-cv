@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Avatar</title>
+
+    <!-- Link to external CSS stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/portrait_styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='image/favicon.ico') }}">
+
+    <!-- Link to external JavaScript files -->
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script src="https://aka.ms/csspeech/jsbrowserpackageraw"></script>
+
+    <style>
+      :root {
+          --background-image: url({{ bg_img }});
+          --chat-color: {{ chat_color }};
+          --button-color: {{ button_color }};
+          --button-hover-color: {{ button_hover_color }};
+          --button-icon-color: {{ button_icon_color }};
+      }
+    </style>
+
+    <!-- Include Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <!-- This hidden input stores the required variables, either passed from the backend Flask app or hidden -->
+  <input id="clientId" type="hidden" value="{{client_id}}">
+  <input id="sttLocales" type="hidden" value="{{stt_locales}}">
+  <input type="checkbox" id="continuousConversation" style="display: none;">
+  <input type="checkbox" id="autoReconnectAvatar" checked style="display: none;">
+  <input type="checkbox" id="useLocalVideoForIdle" style="display: none;">
+
+  <div class="avatar-block">
+    <div id="remoteVideo"></div>
+    <canvas id="canvas" width="720" height="1080" style="background-color: transparent;" hidden="hidden"></canvas>
+    
+    <fluent-card class="record-card">
+      <div class="button-container">
+        <button id="startSession" class="icon-button" onclick="window.startSession()">
+          <i class="fas fa-play-circle"></i>
+        </button>
+        <button id="microphone" class="icon-button" onclick="window.microphone()" disabled>
+          <i class="fas fa-microphone"></i>
+        </button>
+        <button id="stopSpeaking" class="icon-button" onclick="stopSpeaking()" disabled>
+          <i class="fas fa-stop-circle"></i>
+        </button>
+        <button id="clearChatHistory" class="icon-button" onclick="window.clearChatHistory()">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+        <button id="showChatHistory" class="icon-button" onclick="window.toggleChat()">
+          <i class="fas fa-comment-dots"></i>
+        </button>
+        <button id="stopSession" class="icon-button" onclick="window.stopSession()" disabled>
+          <i class="fas fa-times-circle"></i>
+        </button>
+      </div>
+    </fluent-card>
+  </div> 
+  
+  <div id="chat-box" class="chat-container" style="display: none;">
+    <textarea id="chatHistory"></textarea>
+    <textarea id="latencyLog" hidden></textarea>
+    <div id="showTypeMessageCheckbox">
+      <input type="checkbox" id="showTypeMessage" checked style="display: none;"></input><br />
+    </div>
+    <textarea id="userMessageBox" rows="3" placeholder="Type a message..." hidden></textarea>
+  </div>
+
+</body>
+
+</html>
