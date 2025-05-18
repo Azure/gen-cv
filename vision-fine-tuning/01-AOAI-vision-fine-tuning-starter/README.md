@@ -1,6 +1,6 @@
-# Fine-tuning Azure OpenAI GPT-4o for Chart Analysis
+# Fine-tuning Azure OpenAI GPT-4.1 for Chart Analysis
 
-This notebook demonstrates the process of vision fine-tuning of GPT-4o leveraging a chart analysis benchmark dataset for visual and logical reasoning. It covers data preparation, fine-tuning, deployment, and evaluation against GPT-4o's baseline performance.
+This notebook demonstrates the process of vision fine-tuning of GPT-4.1 leveraging a chart analysis benchmark dataset for visual and logical reasoning. It covers data preparation, fine-tuning, deployment, and evaluation against GPT-4.1's baseline performance.
 
 We are using the **ChartQA** dataset, a benchmark designed for question answering tasks involving chart images. Each entry in the dataset comprises a chart image, an associated question, and the corresponding answer, facilitating the development and evaluation of models that integrate visual and logical reasoning to interpret and analyze information presented in graphical formats.
 
@@ -27,13 +27,13 @@ pip install -r requirements.txt
 
 __Required Services:__
 - An Azure OpenAI resource with the following model deployments:
-   - GPT-4o
+   - GPT-4.1
 
 __Optional Services:__
-- Azure AI Foundry
+- Azure AI Foundry for managing fine-tuning in the UI
 
 Rename the environemt file template `.env.template` to `.env` and add your credentials by editing the file.
 
 Navigate to the vision fine-tuning notebook:
 
-- [Fine-tuning Azure OpenAI GPT-4o for Chart Analysis](fine-tune-aoai-gpt4o-for-chart-analysis.ipynb)
+- [Fine-tuning Azure OpenAI GPT-4.1 for Chart Analysis](fine-tune-aoai-gpt4-1-for-chart-analysis.ipynb)

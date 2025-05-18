@@ -6,3 +6,5 @@ ipywidgets
 azure-identity
 tenacity
 matplotlib
+tabulate
+tables
